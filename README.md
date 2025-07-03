@@ -74,13 +74,13 @@ You must also have a **Kraken2 database**, such as SILVA, properly set up.
 ### 1. Make the Script Executable
 
 ```bash
-chmod +x bactonano_workflow.sh
+chmod +x BactoNano_workflow.sh
 ```
 
 ### 2. Run the Full Workflow (All Steps in Order)
 
 ```bash
-bash bactonano_workflow.sh
+bash BactoNano_workflow.sh
 ```
 
 ### 3. Run Specific Steps Only
@@ -88,7 +88,7 @@ bash bactonano_workflow.sh
 You can run selected steps by specifying them with the `-s` flag, separated by commas:
 
 ```bash
-bash bactonano_workflow.sh -s qc,trim_adapter,filter,classify
+bash BactoNano_workflow.sh -s qc,trim_adapter,filter,classify
 ```
 
 ### 4. Available Workflow Steps
