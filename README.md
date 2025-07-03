@@ -1,4 +1,4 @@
-# 16S Nanopore Workflow for the NEMADAPT (Nematode ADAPTation in response to Thermal stress) project
+# 16S Nanopore Workflow
 
 ### Author: Rodgee Mae Guden  
 **Marine Biology Research Group, Ghent University**  
