@@ -8,7 +8,7 @@
 
 ## Overview
 
-This repository contains a modular, robust Bash workflow for processing **16s Nanopore sequencing data** within the framework of the [NEMADAPT project](https://www.marinebiology.ugent.be/) This project investigates how marine nematodes adapt in response to climate change, which involves looking into nematode microbiome. It automates the key steps for high-throughput microbial community analysis, from raw FASTQ files to taxonomic profiles and OTU tables.
+This repository contains a modular, robust Bash workflow for processing **16s Nanopore sequencing data** within the framework of the [NEMADAPT project](https://www.marinebiology.ugent.be/). This project investigates transgenerational adaptive responses of marine nematodes to climate change, which involves looking into nematode microbiome. This workflow automates the key steps for high-throughput microbial community analysis, from raw FASTQ files to taxonomic profiles and OTU tables.
 
 The workflow includes:
 
