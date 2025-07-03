@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =====================================================
-# 16s nanopore workflow
+# BactoNano workflow: analysing 16s nanopore sequencing data
 # Author: Rodgee Mae Guden
 
 # Copyright © 2025 Rodgee Mae Guden. Marine Biology Research Group, Ghent University
@@ -28,8 +28,8 @@ mkdir -p $KRAKEN_DB
 mkdir -p $LOG_PATH
 
 # To run the script
-# bash 16S_rodgee_nemadapt.sh -s qc
-# bash 16S_rodgee_nemadapt.sh -s qc,trim
+# bash bactonano_workflow.sh -s qc
+# bash bactonano_workflow.sh -s qc,trim
 
 # Function to log messages with timestamps
 echo_with_timestamp() {
@@ -111,36 +111,6 @@ for STEP in "${STEPS[@]}"; do
                 if [[ -f "$original_file" ]]; then
                     cp "$original_file" "$new_file"
                     echo_with_timestamp "Renamed barcode${barcode_index} → ${sample_names[$i]}"
-                else
-                    echo_with_timestamp "⚠️ WARNING: $original_file not found!"
-                fi
-            done
-
-            echo_with_timestamp "✅ Renaming completed. Output in $RENAME_DIR"
-            ;;
-
-        rename_fastq_FC2)
-            echo_with_timestamp "Step: Rename concatenated FASTQ files based on sample names"
-
-            CONCAT_DIR="$OUTDIR/concatenated/FC2"
-            RENAME_DIR="$OUTDIR/renamed"
-            mkdir -p "$RENAME_DIR"
-
-            # Sample names ordered column-wise
-            sample_names_set2=(
-                1A20P1 1A20P2 1A20P3 1A20P4 1A23U1 1A23U2 1A23U3 1A23U4
-                1A23P1 1A23P2 1A23P3 1A23P4 1B20U1 1B20U2 1B20U3 1B20U4
-                1B20P1 1B20P2 1B20P3 1B20P4 1B23U1 1B23U2 1B23U3 1B23U4
-            )
-
-            for i in "${!sample_names_set2[@]}"; do
-                barcode_index=$(printf "%02d" $((i + 1)))
-                original_file="$CONCAT_DIR/barcode${barcode_index}.fastq.gz"
-                new_file="$RENAME_DIR/${sample_names_set2[$i]}.fastq.gz"
-
-                if [[ -f "$original_file" ]]; then
-                    cp "$original_file" "$new_file"
-                    echo_with_timestamp "Renamed barcode${barcode_index} → ${sample_names_set2[$i]}"
                 else
                     echo_with_timestamp "⚠️ WARNING: $original_file not found!"
                 fi
@@ -292,13 +262,7 @@ for STEP in "${STEPS[@]}"; do
             # Build and download Kraken database, if needed
             # create db folder (e.g., mkdir -p /home/rguden/Documents/databases/silva)
             # kraken2-build --special silva --db /home/rguden/Documents/databases/silva --threads 4
-            # kraken2-build --standard --db /home/rguden/Documents/databases/kraken2/standard --threads 4
-
             # kraken2-build --build --db /home/rguden/Documents/databases/silva --threads 4
-
-            # You can also download prebuilt databases here: https://lomanlab.github.io/mockcommunity/mc_databases.html
-                # kraken2-build --download-taxonomy --db /home/rguden/Documents/databases/maxikraken
-                # kraken2-build --build --db "$KRAKEN_DB" --threads "$THREADS"
 
             # Run kraken2
             for file in "$OUTDIR/filtered"/scrubb_*.fastq.gz; do
