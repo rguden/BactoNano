@@ -1,2 +1,7 @@
-# 16S-Nanopore-Workflow
-Bash workflow for processing 16S Nanopore sequencing data, including demultiplexing, QC, chimera removal, taxonomic classification, and OTU table generation.
+# 16S Nanopore Workflow for NEMADAPT
+
+### Author: Rodgee Mae Guden  
+**Marine Biology Research Group, Ghent University**  
+**Contact:** rodgeemae.guden@ugent.be  
+
+... (Truncated for brevity, full content included in actual file) ...

@@ -1,0 +1,5 @@
+# Ignore output and log files
+output/
+*.log
+*.html
+*.json
