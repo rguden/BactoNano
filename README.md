@@ -58,7 +58,7 @@ The following tools must be installed and accessible in your `$PATH`:
 | `multiqc`    | Aggregate QC reports               | [MultiQC](https://multiqc.info/)            |
 | `porechop`   | Adapter trimming for Nanopore      | [Porechop](https://github.com/rrwick/Porechop) |
 | `minimap2`   | Overlap detection (chimera removal)| [Minimap2](https://github.com/lh3/minimap2) |
-| `yacrd`      | Chimera detection & removal        | [yacrd](https://github.com/natir/yacrd)     |
+| `vsearch`      | Chimera detection & removal        | [vsearch](https://github.com/torognes/vsearch)     |
 | `fastp`      | Length filtering, quality trimming | [fastp](https://github.com/OpenGene/fastp)  |
 | `kraken2`    | Taxonomic classification           | [Kraken2](https://github.com/DerrickWood/kraken2) |
 | `bracken`    | Abundance estimation refinement    | [Bracken](https://github.com/jenniferlu717/Bracken) |
